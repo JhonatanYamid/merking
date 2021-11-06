@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>SuperOfertas</title>
+	<title>Merking</title>
 	<link rel="stylesheet" href="<?= base_url ?>assets/css/styles.css" />
 	<link rel="stylesheet" href="<?= base_url ?>assets/bootstrap/dist/css/bootstrap.min.css" />
 	<script src="<?= base_url ?>assets/js/jquery.min.js"></script>
@@ -20,14 +20,18 @@
 		#logo img {
 			height: 75px;
 		}
+
+		.bg-success {
+			transition: all 0.5s ease;
+		}
 	</style>
 </head>
 
-<body>
-	<div style="background-image:url('<?= base_url ?>assets/img/jumbotron2.png'); background-size: 100% auto;  height:35em" >
+<body style="overflow-x: hidden;">
+	<div style="height:0,5px">
 		<!-- MENU -->
 		<?php $categorias = Utils::showCategorias(); ?>
-		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="opacity:0.4!important;">
+		<nav class="navbar navbar-expand-lg navbar-dark " id="menu">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -39,22 +43,29 @@
 
 
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="font-size:20px">
+					<li class="nav-item active font-weight-bold font-weight-bold">
+						<a class="nav-link" href="<?= base_url ?>">Inicio</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
+					<li class="nav-item active dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+							Categorias
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: white;">
+							<?php while ($cat = $categorias->fetch_object()) : ?>
+								<a class="dropdown-item" href="<?= base_url ?>categoria/ver&id=<?= $cat->id ?>"><?= $cat->nombre ?></a>
+							<?php endwhile; ?>
+						</div>
 					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
+			</div>
+			<?php $stats = Utils::statsCarrito(); ?>
+			<div class="dropdown my-2 my-lg-0">
+				<a style="color: white;text-decoration:none" class="mr-sm-5" href="<?= base_url ?>carrito/index">
+					<img class="img-carrito" src="<?= base_url ?>assets/img/carrito.png">
+					<?= $stats['count']?>
+				</a>
 			</div>
 		</nav>
 	</div>
-	<div class="container">
+	<div class="container-fluid px-0">
