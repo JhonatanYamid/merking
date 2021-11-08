@@ -3,10 +3,8 @@
 
 	<?php
 	if (isset($categoria)) : ?>
-		<h1 class="my-5 font-weight-bold"><?= $categoria->nombre ?></h1>
-		<?php if ($productos->num_rows == 0) : ?>
-			<p>No hay productos para mostrar</p>
-		<?php else : ?>
+		<h1 class="my-4 font-weight-bold"><?= $categoria->nombre ?></h1>
+		<?php if (isset($productos1) && $productos1) : ?>
 			<div class="row mt-3">
 				<?php foreach ($productos1 as $producto) :
 					$nombre = str_replace(array("TA- ", "/", "."), "", $producto['nombre']);
@@ -30,6 +28,8 @@
 					</div>
 				<?php endforeach; ?>
 			</div>
+		<?php else : ?>
+			<p>No hay productos para mostrar</p>
 		<?php endif; ?>
 	<?php else : ?>
 		<h1>La categoría no existe</h1>

@@ -40,11 +40,7 @@
 		alturaDocument = $(document).height();
 		alturaScroll = $(this).scrollTop();
 		alturaViewPort = $(this).height();
-		console.log("-----------------");
-		console.log(alturaDocument);
-		console.log(parseInt(alturaScroll) + parseInt(alturaViewPort)+50);
 		if (alturaDocument < (parseInt(alturaScroll) + parseInt(alturaViewPort) +100)) {
-			console.log(2);
 			$("#footer").addClass("d-block");
 			$("#footer").removeClass("d-none");
 		} else {

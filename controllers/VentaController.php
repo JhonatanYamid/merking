@@ -7,7 +7,7 @@ class ventaController{
 		if(isset($_SESSION['carrito'] ) && $_SESSION['carrito'] ){
 			$productos = '';
 			foreach ($_SESSION['carrito'] as $producto){
-				$productos .= '%09‣%20'.$producto['unidades']."%20-%20".$producto['nombre']."%0A";
+				$productos .= '%09‣%20'.$producto['unidades']."%20-%20".$producto['nombre']."%20(".$producto['id_producto'].")%0A";
 			}
 			$url = "https://api.whatsapp.com/send/?phone=573192934969&";
 			$mensaje = "text=🛒%20*Compra%20desde%20Merking*%0A%0A%20▪️%20Nombre:%20{$_POST['nombre']}%0A%20▪️%20Teléfono:%20{$_POST['numero']}%0A%20▪️%20Correo%20Electrónico:%20{$_POST['email']}%0A%20▪️%20Dirección:%20{$_POST['direccion']}%0A%20▪️%20Productos:%20%0A".$productos."%0A%09_*Total%20:%20$%20{$_POST['total']}*_%0A";
