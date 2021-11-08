@@ -5,13 +5,16 @@
 		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner" style="border-radius: 20px;">
 				<div class="carousel-item active">
-					<img class="d-block w-100 d-block" src="<?= base_url ?>assets/img/azul.png" alt="First slide" height="400">
+					<img class="d-block w-100 d-block" src="<?= base_url ?>assets/img/slide1.png" alt="First slide">
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100 d-block" src="<?= base_url ?>assets/img/salmon.png" alt="Second slide" height="400">
+					<img class="d-block w-100 h-auto d-block" src="<?= base_url ?>assets/img/slide2.png" alt="Second slide">
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-100 d-block" src="<?= base_url ?>assets/img/azul claro.png" alt="Third slide" height="400">
+					<img class="d-block w-100 d-block" src="<?= base_url ?>assets/img/slide3.png" alt="Third slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100 d-block" src="<?= base_url ?>assets/img/slide4.png" alt="Third slide">
 				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -24,25 +27,25 @@
 			</a>
 		</div>
 	</div>
-	<div class="d-none d-sm-block col-12 px-5 pb-5">
-		<div class="row pb-5">
+	<div class="d-none d-sm-block col-12 px-5 py-4">
+		<div class="row">
 			<?php
 			$count = 0;
-			while ($product = $productos->fetch_object()) : 
+			while ($product = $productos->fetch_object()) :
 			?>
 				<div class="col-sm-4">
 					<div class="card m-2">
-						<img id="myImg" class="card-img-top" src="<?= base_url . $product->imagen ?>" onclick=abrir(this) alt="Card image cap">
+						<img id="myImg" class="card-img-top" src="<?= $product->imagen ?>" onclick=abrir(this) alt="Card image cap">
 						<div id="myModal" class="modal">
 							<span class="close">&times;</span>
 							<img class="modal-content" id="img01">
 						</div>
 						<div class="card-body">
-							<h5 class="card-title ">
-								<?= $product->nombre ?>
-							</h5>
-							<div class="card-text">
-								<p><?= '$ ' . $product->precio ?></p>
+
+							<div class="card-text" style="height:100px">
+								<h3><?= '$ ' . number_format($product->precio) ?></h3>
+
+								<small><?= $product->nombre  ?></small>
 							</div>
 						</div>
 					</div>

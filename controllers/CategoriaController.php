@@ -28,7 +28,7 @@ class categoriaController
 			$producto = new Producto();
 			$producto->setCategoria($id);
 			$productos = $producto->getAllCategory();
-			
+
 
 
 
@@ -37,64 +37,76 @@ class categoriaController
 
 			$productos1 =  array(
 				array(
-					'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
-					54652,
-					'TA- Set x 2 300',
-					16800,
-					'$ 12.000',
-					1,
-					'perfumeria',
-					465, 'https://www.avon.co/assets/es-co/images/product/prod_117721c_1_310x310.jpg'
+					'nombre' => 'TA- Set x 2 300 ooo Adrenaline Fragancia 100 ml',
+					'id' => 564652,
+					'nombreCorto' => 'TA- Set x 2 300',
+					'precio' => 16800,
+					'precioOriginal' => '$ 12.000',
+					'disponibilidad' => 1,
+					'idImagen' => '117721c',
+					'categoria' => 'perfumeria',
+					'idCategoria' => 465,
+					
 				),
 				array(
-					'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
-					54652,
-					'TA- Set x 2 300',
-					16800,
-					'$ 12.000',
-					1,
-					'perfumeria',
-					465, 'https://www.avon.co/assets/es-co/images/product/prod_117721c_1_310x310.jpg'
+					'nombre' => 'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
+					'id' => 54652,
+					'nombreCorto' => 'TA- Set x 2 300',
+					'precio' => 'No disponible',
+					'precioOriginal' => '$ 12.000',
+					'disponibilidad' => 2,
+					'idImagen' => '117721c',
+					'categoria' => 'perfumeria',
+					'idCategoria' => 465,
+					
 				),
 				array(
-					'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
-					54652,
-					'TA- Set x 2 300',
-					16800,
-					'$ 12.000',
-					1,
-					'perfumeria',
-					465, 'https://www.avon.co/assets/es-co/images/product/prod_117721c_1_310x310.jpg'
+					'nombre' => 'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
+					'id' => 54652,
+					'nombreCorto' => 'TA- Set x 2 300',
+					'precio' => 16800,
+					'precioOriginal' => '$ 12.000',
+					'disponibilidad' => 1,
+					'idImagen' => '117721c',
+					'categoria' => 'perfumeria',
+					'idCategoria' => 465,
+					
 				),
 				array(
-					'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
-					54652,
-					'TA- Set x 2 300',
-					16800,
-					'$ 12.000',
-					1,
-					'perfumeria',
-					465, 'https://www.avon.co/assets/es-co/images/product/prod_117721c_1_310x310.jpg'
+					'nombre' => 'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
+					'id' => 54655552,
+					'nombreCorto' => 'TA- Set x 2 300',
+					'precio' => 16800,
+					'precioOriginal' => '$ 12.000',
+					'disponibilidad' => 1,
+					'idImagen' => '117628c',
+					'categoria' => 'perfumeria',
+					'idCategoria' => 465,
+					
 				),
 				array(
-					'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
-					54652,
-					'TA- Set x 2 300',
-					16800,
-					'$ 12.000',
-					1,
-					'perfumeria',
-					465, 'https://www.avon.co/assets/es-co/images/product/prod_117721c_1_310x310.jpg'
+					'nombre' => 'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
+					'id' => 54652,
+					'nombreCorto' => 'TA- Set x 2 300',
+					'precio' => 16800,
+					'precioOriginal' => '$ 12.000',
+					'disponibilidad' => 1,
+					'idImagen' => '117721c',
+					'categoria' => 'perfumeria',
+					'idCategoria' => 465,
+					
 				),
 				array(
-					'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
-					54652,
-					'TA- Set x 2 300',
-					16800,
-					'$ 12.000',
-					1,
-					'perfumeria',
-					465, 'https://www.avon.co/assets/es-co/images/product/prod_117721c_1_310x310.jpg'
+					'nombre' => 'TA- Set x 2 300 Km/h Max Turbo Gel Para Afeitar Sin Espuma 90 g + Virtual Adrenaline Fragancia 100 ml',
+					'id' => 54652,
+					'nombreCorto' => 'TA- Set x 2 300',
+					'precio' => 16800,
+					'precioOriginal' => '$ 12.000',
+					'disponibilidad' => 1,
+					'idImagen' => '117721c',
+					'categoria' => 'perfumeria',
+					'idCategoria' => 465,
+					
 				),
 			);
 

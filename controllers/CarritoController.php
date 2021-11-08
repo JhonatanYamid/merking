@@ -15,6 +15,9 @@ class carritoController{
 	public function add(){
 		if(isset($_GET['id'])){
 			$producto_id = $_GET['id'];
+			$producto_nombre = $_GET['nombre'];
+			$producto_precio = $_GET['precio'];
+			$producto_idImagen = $_GET['idImagen'];
 		}else{
 			header('Location:'.base_url);
 		}
@@ -30,22 +33,18 @@ class carritoController{
 		}
 		
 		if(!isset($counter) || $counter == 0){
-			// Conseguir producto
-			$producto = new Producto();
-			$producto->setId($producto_id);
-			$producto = $producto->getOne();
 
 			// Añadir al carrito
-			if(is_object($producto)){
+			if(isset($producto_id) && $producto_id){
 				$_SESSION['carrito'][] = array(
-					"id_producto" => $producto->id,
-					"precio" => $producto->precio,
-					"unidades" => 1,
-					"producto" => $producto
+					"id_producto" => $producto_id,
+					"nombre" => $producto_nombre,
+					"precio" => $producto_precio,
+					"idImagen" => $producto_idImagen,
+					"unidades" => 1
 				);
 			}
 		}
-		
 		header('Location:' . getenv('HTTP_REFERER'));
 	}
 	

@@ -36,7 +36,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div id='logo' class="mb-3">
-				<a class="navbar-brand navbar-nav navbar-center" href="#">
+				<a class="navbar-brand navbar-nav navbar-center" href="<?= base_url ?>">
 					<img class="img-fluid" src="<?= base_url ?>assets/img/logo.png" alt="Logo" />
 				</a>
 			</div>
@@ -63,7 +63,7 @@
 			<div class="dropdown my-2 my-lg-0">
 				<a style="color: white;text-decoration:none" class="mr-sm-5" href="<?= base_url ?>carrito/index">
 					<img class="img-carrito" src="<?= base_url ?>assets/img/carrito.png">
-					<?= $stats['count']?>
+					<?= $stats['count'] ?>
 				</a>
 			</div>
 		</nav>

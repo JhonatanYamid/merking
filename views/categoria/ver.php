@@ -8,26 +8,27 @@
 			<p>No hay productos para mostrar</p>
 		<?php else : ?>
 			<div class="row mt-3">
-				<?php while ($product = $productos->fetch_object()) : ?>
-					<div class="col-12 col-sm-3">
+				<?php foreach ($productos1 as $producto) :
+					$nombre = str_replace(array("TA- ", "/"), "", $producto['nombre']);
+				?>
+					<div class="col-12 col-sm-4">
 						<div class="card m-2">
-							<img id="myImg" class="card-img-top" src="<?= base_url . $product->imagen ?>" onclick=abrir(this) alt="Card image cap">
+							<img id="myImg" class="card-img-top" src="<?= "https://www.avon.co/assets/es-co/images/product/prod_" . $producto['idImagen'] . "_1_310x310.jpg" ?>" onclick=abrir(this) alt="Card image cap">
 							<div id="myModal" class="modal">
 								<span class="close">&times;</span>
 								<img class="modal-content" id="img01">
 							</div>
 							<div class="card-body">
-								<h5 class="card-title ">
-									<?= $product->nombre ?>
-								</h5>
-								<div class="card-text">
-									<p><?= '$ ' . $product->precio ?></p>
+								<div class="card-text" style="height:150px">
+									<h3><?= ($producto['disponibilidad'] == 1) ? '$ ' . number_format($producto['precio']) : 'No disponible' ?></h3>
+
+									<small><?= $nombre ?></small>
 								</div>
-								<a href="<?= base_url ?>carrito/add&id=<?= $product->id ?>" class="btn btn-warning text-white">Añadir al carrito</a>
+								<a href="<?= base_url ?>carrito/add&<?= "id={$producto['id']}&nombre={$nombre}&precio={$producto['precio']}&idImagen={$producto['idImagen']}" ?>" class="btn btn-warning text-white <?= ($producto['disponibilidad'] == 2) ? 'disabled' : '' ?>">Añadir al carrito</a>
 							</div>
 						</div>
 					</div>
-				<?php endwhile; ?>
+				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
 	<?php else : ?>
