@@ -4,17 +4,24 @@ require_once 'models/venta.php';
 class ventaController{
 	
 	public function hacer(){
-		$productos = '';
-		foreach ($_SESSION['carrito'] as $producto){
-			$productos .= '%09‣%20'.$producto['unidades']."%20-%20".$producto['nombre']."%0A";
+		if(isset($_SESSION['carrito'] ) && $_SESSION['carrito'] ){
+			$productos = '';
+			foreach ($_SESSION['carrito'] as $producto){
+				$productos .= '%09‣%20'.$producto['unidades']."%20-%20".$producto['nombre']."%0A";
+			}
+			$url = "https://api.whatsapp.com/send/?phone=573192934969&";
+			$mensaje = "text=🛒%20*Compra%20desde%20Merking*%0A%0A%20▪️%20Nombre:%20{$_POST['nombre']}%0A%20▪️%20Teléfono:%20{$_POST['numero']}%0A%20▪️%20Correo%20Electrónico:%20{$_POST['email']}%0A%20▪️%20Dirección:%20{$_POST['direccion']}%0A%20▪️%20Productos:%20%0A".$productos."%0A%09_*Total%20:%20$%20{$_POST['total']}*_%0A";
+			$mensaje = $url.str_replace(array("°","\\","#","/", "."), "%20", "$mensaje");
+			// $venta = new Venta();
+			// $usuario_id = $_SESSION['identity']->id;
+			// $venta->setCliente($usuario_id);
+			// $details = $venta->showClient();
+			// require_once 'views/pedido/hacer.php';
+			header("Location:".$mensaje);
+		}else{
+			header('Location:' . base_url ."carrito/index");
 		}
-		$mensaje = "https://api.whatsapp.com/send/?phone=573192934969&text=🛒%20*Compra%20desde%20Merking*%0A%0A%20▪️%20Nombre:%20{$_POST['nombre']}%0A%20▪️%20Teléfono:%20{$_POST['numero']}%0A%20▪️%20Correo%20Electrónico:%20{$_POST['email']}%0A%20▪️%20Dirección:%20{$_POST['direccion']}%0A%20▪️%20Productos:%20%0A".$productos."%0A%09_*Total%20:%20$%20{$_POST['total']}*_%0A";
-		// $venta = new Venta();
-		// $usuario_id = $_SESSION['identity']->id;
-		// $venta->setCliente($usuario_id);
-		// $details = $venta->showClient();
-		// require_once 'views/pedido/hacer.php';
-		header("Location:".$mensaje);
+		
 	}
 	
 	public function add(){

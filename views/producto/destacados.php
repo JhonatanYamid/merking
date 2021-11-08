@@ -27,7 +27,12 @@
 			</a>
 		</div>
 	</div>
-	<div class="d-none d-sm-block col-12 px-5 py-4">
+	<div class="col-12 d-sm-none">
+		<hr class="mt-4" style="width: 75%;margin-left: auto;
+  margin-right: auto;">
+		<h3 class="mt-5 mb-1 font-weight-bold text-center">Destacados</h3>
+	</div>
+	<div class="col-12 px-5 py-4">
 		<div class="row">
 			<?php
 			$count = 0;

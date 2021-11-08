@@ -1,15 +1,15 @@
-<div style="background-color: #28a745; height: 120px"></div>
+<div class="d-none d-sm-block" style="background-color: #28a745; height: 120px"></div>
 <div class="px-5 pt-4">
 
 	<?php
 	if (isset($categoria)) : ?>
-		<h1><?= $categoria->nombre ?></h1>
+		<h1 class="my-5 font-weight-bold"><?= $categoria->nombre ?></h1>
 		<?php if ($productos->num_rows == 0) : ?>
 			<p>No hay productos para mostrar</p>
 		<?php else : ?>
 			<div class="row mt-3">
 				<?php foreach ($productos1 as $producto) :
-					$nombre = str_replace(array("TA- ", "/"), "", $producto['nombre']);
+					$nombre = str_replace(array("TA- ", "/", "."), "", $producto['nombre']);
 				?>
 					<div class="col-12 col-sm-4">
 						<div class="card m-2">
